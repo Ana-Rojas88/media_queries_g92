@@ -5,12 +5,12 @@ body {
     grid-template-areas: 
         "nav nav" 
         "filtros productos" 
-        "filtros productos" 
         " filtros footer";
     grid-template-rows: auto auto auto;
     grid-template-columns: 20% auto;
     min-height: 100vh;
 }
+
 nav {
     grid-area: nav;
     background: #8B4513;
@@ -65,11 +65,48 @@ background-color: #8B4513;
     border-radius: 10px;
     margin-bottom: 10px;
 }
+.paginacion{
+    display: flex;
+    justify-content: center;
 
+}
+.paginacion button{
+    width: 1rem;
+    height: 1rem;
+    padding: 1rem;
+    text-align: center;
+    
+}
 footer {
     grid-area: footer;
     background: #8B4513;
     color: white;
     text-align: center;
     padding: 1rem;
+}
+@media  screen and (max-width: 575px){
+    body{
+
+        grid-template-areas: "nav" "filtros" "productos" "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: 10% 5% 1fr 10%;
+    }
+    .productos{
+        grid-template-columns: 1fr;
+
+    }
+    .filtros{
+        flex-direction: row;
+        padding: 0.2rem;
+       
+    }
+    .ocultar{
+        display: none;
+    
+    }
+}
+@media  screen and (min-width: 576px) and (max-width: 1023px){
+    .productos{
+        grid-template-columns: 1fr 1fr;
+    }
 }
